@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageFilterView" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/ed_email"
         android:layout_width="306dp"
         android:layout_height="66dp"
         android:layout_marginTop="16dp"
@@ -40,7 +40,7 @@
         android:text="員工編號/email"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <TextView
         android:id="@+id/textView3"
@@ -52,18 +52,19 @@
         android:text="密碼"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_email" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login"
         android:layout_width="275dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
+        android:onClick="onClick"
         android:text="Login"
         app:backgroundTint="#C3066BBC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_password" />
 
     <Button
         android:id="@+id/button2"
@@ -76,7 +77,7 @@
         app:backgroundTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/imageFilterView"
@@ -93,7 +94,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/ed_password"
         android:layout_width="306dp"
         android:layout_height="66dp"
         android:layout_marginTop="16dp"
@@ -123,7 +124,7 @@
         android:layout_marginLeft="280dp"
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/login"
         app:srcCompat="@drawable/greens" />
 
     <ImageView

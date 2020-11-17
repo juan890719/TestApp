@@ -10,7 +10,7 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Login"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#08406C"
@@ -23,6 +23,7 @@
         android:layout_width="306dp"
         android:layout_height="66dp"
         android:layout_marginTop="16dp"
+        android:background="	#F0F0F0"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,10 +59,10 @@
         android:id="@+id/login"
         android:layout_width="275dp"
         android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:onClick="onClick"
+        android:layout_marginTop="40dp"
+        android:onClick="login"
         android:text="Login"
-        app:backgroundTint="#C3066BBC"
+        app:backgroundTint="	#2894FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_password" />
@@ -72,9 +73,9 @@
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
         android:text="Forget passward"
-        android:textColor="#3F51B5"
+        android:textColor="@color/white"
         android:textColorHint="#FFFFFF"
-        app:backgroundTint="#FFFFFF"
+        app:backgroundTint="	#2894FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
@@ -98,6 +99,7 @@
         android:layout_width="306dp"
         android:layout_height="66dp"
         android:layout_marginTop="16dp"
+        android:background="	#F0F0F0"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,8 +112,9 @@
         android:layout_width="275dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
+        android:onClick="signup"
         android:text="Sign up"
-        app:backgroundTint="#C3066BBC"
+        app:backgroundTint="	#2894FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
@@ -136,5 +139,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4"
         app:srcCompat="@drawable/green" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="顯示密碼"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

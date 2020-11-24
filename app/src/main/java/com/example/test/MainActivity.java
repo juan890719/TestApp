@@ -1,5 +1,6 @@
 package com.example.test;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -20,13 +21,18 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String mDeviceIMEI = "0";
-    TelephonyManager mTelephonyManager = null;
+    //public static String mDeviceIMEI = "0";
+    //TelephonyManager mTelephonyManager = null;
     private static final String TAG = MainActivity.class.getSimpleName();
-    private static final int PERMISSIONS_REQUEST_READ_PHONE_STATE = 999;
+    //private static final int PERMISSIONS_REQUEST_READ_PHONE_STATE = 999;
+    String IMEINumber;
+    TextView imei;
+    private static final int REQUEST_CODE = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
         EditText password = findViewById(R.id.ed_password);
         CheckBox cb = findViewById(R.id.checkBox);
+        imei = findViewById(R.id.ed_imei);
+        getImei();
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // TODO Auto-generated method stub
@@ -50,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     public void login(View view) {
@@ -76,7 +84,29 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent2);
     }
 
+    public void getImei(){
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_CODE);
+            return;
+        }
+        IMEINumber = telephonyManager.getDeviceId();
+        imei.setText(IMEINumber);
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "Permission granted.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Permission denied.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+    /*
     private void getDeviceImei() {
         mTelephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         try {
@@ -107,5 +137,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-    }
+    }*/
 }

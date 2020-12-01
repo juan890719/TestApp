@@ -111,7 +111,9 @@
         android:onClick="create"
         android:text="Create"
         app:backgroundTint="	#2894FF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_password3" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_password3"
+        app:layout_constraintVertical_bias="0.093" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,46 @@
+Index: app/src/main/java/com/example/test/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/test/MainActivity.java	(revision 34624462e2c4bb6f1824a11f00b22b8b424d6632)
++++ app/src/main/java/com/example/test/MainActivity.java	(date 1606914105567)
+@@ -3,6 +3,7 @@
+ import androidx.annotation.NonNull;
+ import androidx.appcompat.app.AlertDialog;
+ import androidx.appcompat.app.AppCompatActivity;
++import androidx.constraintlayout.widget.ConstraintLayout;
+ import androidx.core.app.ActivityCompat;
+ import androidx.core.content.ContextCompat;
+ 
+@@ -16,11 +17,15 @@
+ import android.telephony.TelephonyManager;
+ import android.text.method.HideReturnsTransformationMethod;
+ import android.text.method.PasswordTransformationMethod;
++import android.util.DisplayMetrics;
+ import android.util.Log;
+ import android.view.View;
++import android.view.ViewGroup;
++import android.widget.Button;
+ import android.widget.CheckBox;
+ import android.widget.CompoundButton;
+ import android.widget.EditText;
++import android.widget.LinearLayout;
+ import android.widget.TextView;
+ import android.widget.Toast;
+ 
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_main.xml	(revision 34624462e2c4bb6f1824a11f00b22b8b424d6632)
++++ app/src/main/res/layout/activity_main.xml	(date 1606832483051)
+@@ -2,6 +2,7 @@
+ <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/cl"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".MainActivity">

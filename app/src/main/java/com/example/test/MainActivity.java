@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
             finish();
             Intent intent = new Intent(MainActivity.this, PrimaryActivity.class);
             startActivity(intent);
+        } else if (eemail.equals("michelle@gmail.com") && pass.equals("123123")){
+            setResult(RESULT_OK);
+            finish();
+            Intent intent = new Intent(MainActivity.this, PrimaryActivity.class);
+            startActivity(intent);
         } else {
             new AlertDialog.Builder(this)
                     .setTitle("登入失敗")
